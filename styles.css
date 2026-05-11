@@ -71,8 +71,16 @@ h1{font-size:clamp(28px,4.5vw,42px);line-height:1.12;margin:8px 0 12px;font-weig
 .footer a:hover{color:var(--accent)}
 .footer-social{margin-top:0}
 @media (max-width:620px){
-  .footer-inner{flex-direction:column;gap:10px}
-  .hero-wrap{align-items:flex-start}
+  .hero-wrap{align-items:center;justify-content:center;text-align:center}
+  .hero-wrap > div{display:flex;flex-direction:column;align-items:center}
+  .social-row{justify-content:center}
+
+  .section#posts,.post-item,.post-item h3,.post-meta,.post-excerpt{ text-align:left }
+  .section#posts .social-row{justify-content:flex-start}
+
+  .footer-inner{flex-direction:column;align-items:flex-start;gap:10px}
+  .footer-social{justify-content:flex-start}
+
   .brand{font-size:16px}
   .post-item h3{font-size:22px}
 }
