@@ -1,47 +1,71 @@
 :root{
-  --bg:#0b0d12;
-  --panel:#121722;
-  --text:#eef3ff;
-  --muted:#9aa7c2;
-  --line:#24304a;
-  --accent:#ff5a5f;
+  --bg:#f7f7f4;
+  --panel:#ffffff;
+  --text:#191919;
+  --muted:#646464;
+  --line:#e5e5df;
+  --accent:#4f46e5;
 }
+
+:root[data-theme="dark"]{
+  --bg:#0f1115;
+  --panel:#151922;
+  --text:#f2f3f5;
+  --muted:#a2a8b4;
+  --line:#2a3040;
+  --accent:#8b9bff;
+}
+
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
+html,body{height:100%}
 body{
   font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
-  background:radial-gradient(1200px 600px at 20% -20%,#1f2a44 0%,transparent 60%),var(--bg);
+  background:var(--bg);
   color:var(--text);
   line-height:1.55;
+  display:flex;
+  flex-direction:column;
 }
+main{flex:1}
 .container{width:min(1040px,92vw);margin:0 auto}
-.topbar{position:sticky;top:0;background:rgba(11,13,18,.7);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.topbar{position:sticky;top:0;background:color-mix(in srgb, var(--bg) 88%, transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
-.brand{font-weight:800;text-decoration:none;color:var(--text);font-size:20px}
-.nav nav a{color:var(--muted);text-decoration:none;margin-left:18px}
+.brand{font-weight:700;text-decoration:none;color:var(--text);font-size:18px}
+.nav nav{display:flex;align-items:center;gap:12px}
+.nav nav a{color:var(--muted);text-decoration:none}
 .nav nav a:hover{color:var(--text)}
+.theme-toggle{border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:10px;padding:6px 10px;cursor:pointer}
 .hero{padding:88px 0 52px}
 .hero-wrap{display:flex;align-items:center;gap:24px;flex-wrap:wrap}
 .avatar{width:160px;height:160px;border-radius:999px;object-fit:cover;border:2px solid var(--line)}
-.kicker{color:var(--accent);font-weight:700;letter-spacing:.12em;font-size:12px}
 h1{font-size:clamp(28px,4.5vw,42px);line-height:1.12;margin:8px 0 12px;font-weight:700}
 .lead{font-size:clamp(16px,2vw,19px);color:var(--muted);max-width:680px}
 .social-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
 .social-row a{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border:1px solid var(--line);border-radius:10px;color:var(--text);text-decoration:none;transition:.15s ease}
-.social-row a:hover{border-color:#3a4d75;color:var(--accent);transform:translateY(-1px)}
+.social-row a:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px)}
 .social-row svg{width:20px;height:20px}
 .section{padding:26px 0}
 .divider{border:0;border-top:1px solid var(--line);margin:0}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px}
 .post-item h3{margin:0 0 8px}
-.post-meta{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:14px;margin-bottom:10px}
-.post-excerpt{color:var(--muted);margin:0 0 12px}
-.post-details summary{cursor:pointer;color:#c7d8ff;list-style:none}
+.post-details{margin-bottom:8px}
+.post-details summary{cursor:pointer;list-style:none}
 .post-details summary::-webkit-details-marker{display:none}
+.post-details summary h3{display:inline;color:var(--text);text-decoration:underline;text-underline-offset:3px}
+.post-meta{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:14px;margin-bottom:10px}
+.meta-icon{font-size:15px;line-height:1}
 .post-content{margin-top:12px}
 .post-content p{margin:0 0 12px;color:var(--text)}
 .post-content p:last-child{margin-bottom:0}
 .footer{border-top:1px solid var(--line);margin-top:42px}
 .footer-inner{display:flex;justify-content:space-between;align-items:center;padding:18px 0;color:var(--muted)}
-.footer a{color:var(--muted);text-decoration:none;margin-left:14px}
-@media (max-width:620px){.footer-inner{flex-direction:column;gap:8px}.hero-wrap{align-items:flex-start}}
+.footer p{margin:0}
+.footer a{color:var(--muted);text-decoration:none}
+.footer a:hover{color:var(--accent)}
+.footer-social{margin-top:0}
+@media (max-width:620px){
+  .footer-inner{flex-direction:column;gap:8px}
+  .hero-wrap{align-items:flex-start}
+  .brand{font-size:16px}
+}
