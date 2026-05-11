@@ -46,8 +46,8 @@ main{flex:1}
 .hero{padding:52px 0 52px}
 .hero-wrap{display:flex;align-items:center;gap:24px;flex-wrap:wrap}
 .avatar{width:160px;height:160px;border-radius:999px;object-fit:cover;border:2px solid var(--line)}
-h1{font-size:clamp(28px,4.5vw,42px);line-height:1.12;margin:8px 0 12px;font-weight:700}
-.lead{font-size:clamp(16px,2vw,19px);color:var(--muted);max-width:680px}
+h1{font-size:clamp(30px,4vw,38px);line-height:1.14;margin:8px 0 12px;font-weight:700}
+.lead{font-size:clamp(16px,2vw,19px);line-height:1.6;color:var(--muted);max-width:680px}
 .social-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
 .social-row a{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;color:var(--text);text-decoration:none;transition:.15s ease;border:0;background:none;border-radius:0}
 .social-row a:hover{color:var(--accent);transform:translateY(-1px)}
@@ -55,14 +55,15 @@ h1{font-size:clamp(28px,4.5vw,42px);line-height:1.12;margin:8px 0 12px;font-weig
 .section{padding:26px 0}
 .divider{border:0;border-top:1px solid var(--line);margin:0}
 .post-item{padding:8px 0 14px;border-bottom:1px solid var(--line)}
-.post-item h3{margin:0 0 6px;font-size:26px;line-height:1.2}
+.post-item h3{margin:0 0 6px;font-size:24px;line-height:1.25}
 .post-item h3 a{color:var(--text);text-decoration:none}
 .post-item h3 a:hover{color:var(--accent)}
 .post-meta{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:14px;margin-bottom:10px}
 .meta-icon{display:inline-flex;align-items:center;line-height:1}
 .meta-icon svg{width:15px;height:15px}
-.post-excerpt{margin:0;color:var(--muted);max-width:800px}
+.post-excerpt{margin:0;color:var(--muted);font-size:16px;line-height:1.6;max-width:800px}
 .post-page{max-width:800px}
+.post-full{font-size:17px;line-height:1.7}
 .post-full p{margin:0 0 14px}
 .footer{border-top:1px solid var(--line);margin-top:42px}
 .footer-inner{display:flex;justify-content:space-between;align-items:center;padding:18px 0;color:var(--muted)}
@@ -82,5 +83,6 @@ h1{font-size:clamp(28px,4.5vw,42px);line-height:1.12;margin:8px 0 12px;font-weig
   .footer-social{justify-content:flex-start}
 
   .brand{font-size:16px}
-  .post-item h3{font-size:22px}
+  .post-item h3{font-size:21px}
+  .post-full{font-size:16px}
 }
