@@ -71,11 +71,13 @@ h1{font-size:clamp(30px,4vw,38px);line-height:1.14;margin:8px 0 12px;font-weight
 .footer a{color:var(--muted);text-decoration:none}
 .footer a:hover{color:var(--accent)}
 .footer-social{margin-top:0}
-@media (max-width:620px){
-  .hero-wrap{align-items:center;justify-content:center;text-align:center}
+@media (max-width:900px){
+  .hero-wrap{flex-direction:column;align-items:center;justify-content:center;text-align:center}
   .hero-wrap > div{display:flex;flex-direction:column;align-items:center}
-  .social-row{justify-content:center}
+  .hero .social-row{justify-content:center}
+}
 
+@media (max-width:620px){
   .section#posts,.post-item,.post-item h3,.post-meta,.post-excerpt{ text-align:left }
   .section#posts .social-row{justify-content:flex-start}
 
