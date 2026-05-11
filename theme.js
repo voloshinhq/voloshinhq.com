@@ -45,3 +45,7 @@ document.querySelectorAll('a.post-link').forEach((link) => {
     }, 220);
   });
 });
+
+window.addEventListener('pageshow', () => {
+  document.body.classList.remove('is-leaving');
+});
