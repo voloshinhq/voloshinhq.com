@@ -7,7 +7,6 @@ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
 
 root.setAttribute('data-theme', initialTheme);
-if (themeToggle) themeToggle.textContent = initialTheme === 'dark' ? '🌙' : '☀️';
 
 if (themeToggle) {
   themeToggle.addEventListener('click', () => {
@@ -15,7 +14,6 @@ if (themeToggle) {
     const next = current === 'dark' ? 'light' : 'dark';
     root.setAttribute('data-theme', next);
     localStorage.setItem('theme', next);
-    themeToggle.textContent = next === 'dark' ? '🌙' : '☀️';
   });
 }
 
