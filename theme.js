@@ -32,3 +32,16 @@ document.querySelectorAll('[data-read-minutes]').forEach((node) => {
 
   node.textContent = String(minutesFromWords(words || 1));
 });
+
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+document.querySelectorAll('a.post-link').forEach((link) => {
+  link.addEventListener('click', (e) => {
+    if (reduceMotion || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || link.target === '_blank') return;
+    e.preventDefault();
+    document.body.classList.add('is-leaving');
+    setTimeout(() => {
+      window.location.href = link.href;
+    }, 220);
+  });
+});

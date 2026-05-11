@@ -58,6 +58,8 @@ h1{font-size:clamp(30px,4vw,38px);line-height:1.14;margin:8px 0 12px;font-weight
 .post-item h3{margin:0 0 6px;font-size:24px;line-height:1.25}
 .post-item h3 a{color:var(--text);text-decoration:none}
 .post-item h3 a:hover{color:var(--accent)}
+.post-item h3 a::after{content:"";display:block;width:0;height:2px;background:currentColor;transition:width .22s ease;opacity:.5}
+.post-item h3 a:hover::after{width:100%}
 .post-meta{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:14px;margin-bottom:10px}
 .meta-icon{display:inline-flex;align-items:center;line-height:1}
 .meta-icon svg{width:15px;height:15px}
@@ -65,6 +67,20 @@ h1{font-size:clamp(30px,4vw,38px);line-height:1.14;margin:8px 0 12px;font-weight
 .post-page{max-width:800px}
 .post-full{font-size:17px;line-height:1.7}
 .post-full p{margin:0 0 14px}
+
+.post-enter{animation:postIn .55s cubic-bezier(.22,1,.36,1)}
+@keyframes postIn{
+  from{opacity:0;transform:translateY(16px) scale(.985);filter:blur(2px)}
+  to{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}
+}
+
+body.is-leaving main{animation:pageOut .24s ease forwards}
+@keyframes pageOut{from{opacity:1;transform:translateY(0)}to{opacity:.12;transform:translateY(8px)}}
+
+@media (prefers-reduced-motion: reduce){
+  .post-enter,body.is-leaving main{animation:none !important}
+  .post-item h3 a::after{transition:none}
+}
 .footer{border-top:1px solid var(--line);margin-top:42px}
 .footer-inner{display:flex;justify-content:space-between;align-items:center;padding:18px 0;color:var(--muted)}
 .footer p{margin:0}
