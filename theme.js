@@ -18,3 +18,19 @@ if (themeToggle) {
     themeToggle.textContent = next === 'dark' ? '🌙' : '☀️';
   });
 }
+
+const countWords = (text) => (text.trim().match(/[A-Za-zА-Яа-я0-9@']+/g) || []).length;
+const minutesFromWords = (words) => Math.max(1, Math.ceil(words / 100));
+
+document.querySelectorAll('[data-read-minutes]').forEach((node) => {
+  let words = 0;
+  const holder = node.closest('[data-word-count]');
+  if (holder?.dataset.wordCount) words = Number(holder.dataset.wordCount) || 0;
+
+  if (!words) {
+    const post = document.querySelector('.post-full');
+    if (post) words = countWords(post.innerText || post.textContent || '');
+  }
+
+  node.textContent = String(minutesFromWords(words || 1));
+});
