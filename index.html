@@ -14,7 +14,7 @@
 <body>
   <header class="topbar">
     <div class="container nav">
-      <a class="brand" href="#">Yaroslav Voloshin</a>
+      <a class="brand" href="/">Yaroslav Voloshin</a>
       <nav>
         <a href="#about">About</a>
         <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle theme">🌙</button>
@@ -52,25 +52,14 @@
 
     <section class="container section" id="posts">
       <article class="post-item">
-        <details class="post-details">
-          <summary>
-            <h3>Who I am and why this exists</h3>
-          </summary>
-          <div class="post-content card">
-            <p>My name is Yaroslav Voloshin.</p>
-            <p>Since 2020, I’ve been into engineering and have built different projects — both personal and commercial.</p>
-            <p>In 2026, I discovered OpenClaw. It changed how I see the future of software and personal tools.</p>
-            <p>I got inspired by the creator’s idea and decided to build in public.</p>
-            <p>I’m not starting with AI startups right now. I’m starting from the foundation: simple, useful tools for people who work on PCs and laptops.</p>
-            <p>Let’s see where this goes.</p>
-          </div>
-        </details>
+        <h3><a href="/posts/who-i-am-and-why-this-exists.html">Who I am and why this exists</a></h3>
         <div class="post-meta">
           <span class="meta-icon">🗓️</span>
           <span>10 May, 2026</span>
           <span>•</span>
           <span>2 min read</span>
         </div>
+        <p class="post-excerpt">My name is Yaroslav Voloshin. Since 2020, I’ve been into engineering and have built different projects — both personal and commercial. In 2026, I discovered OpenClaw and it changed how I see the future of software and personal tools.</p>
       </article>
     </section>
   </main>
@@ -95,25 +84,6 @@
     </div>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    const root = document.documentElement;
-    const themeToggle = document.getElementById('themeToggle');
-    const savedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
-
-    root.setAttribute('data-theme', initialTheme);
-    themeToggle.textContent = initialTheme === 'dark' ? '🌙' : '☀️';
-
-    themeToggle.addEventListener('click', () => {
-      const current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
-      const next = current === 'dark' ? 'light' : 'dark';
-      root.setAttribute('data-theme', next);
-      localStorage.setItem('theme', next);
-      themeToggle.textContent = next === 'dark' ? '🌙' : '☀️';
-    });
-  </script>
+  <script src="/theme.js"></script>
 </body>
 </html>
