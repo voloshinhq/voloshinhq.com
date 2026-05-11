@@ -43,7 +43,7 @@ main{flex:1}
 :root[data-theme="dark"] .theme-toggle .icon-sun{display:none}
 :root[data-theme="light"] .theme-toggle .icon-moon{display:none}
 :root[data-theme="light"] .theme-toggle .icon-sun{display:block}
-.hero{padding:88px 0 52px}
+.hero{padding:52px 0 52px}
 .hero-wrap{display:flex;align-items:center;gap:24px;flex-wrap:wrap}
 .avatar{width:160px;height:160px;border-radius:999px;object-fit:cover;border:2px solid var(--line)}
 h1{font-size:clamp(28px,4.5vw,42px);line-height:1.12;margin:8px 0 12px;font-weight:700}
