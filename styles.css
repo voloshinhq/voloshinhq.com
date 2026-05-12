@@ -7,6 +7,17 @@
   --accent:#4f46e5;
 }
 
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f1115;
+    --panel:#151922;
+    --text:#f2f3f5;
+    --muted:#a2a8b4;
+    --line:#2a3040;
+    --accent:#8b9bff;
+  }
+}
+
 :root[data-theme="dark"]{
   --bg:#0f1115;
   --panel:#151922;
@@ -43,6 +54,10 @@ main{flex:1}
 :root[data-theme="dark"] .theme-toggle .icon-sun{display:block}
 :root[data-theme="light"] .theme-toggle .icon-moon{display:block}
 :root[data-theme="light"] .theme-toggle .icon-sun{display:none}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]) .theme-toggle .icon-moon{display:none}
+  :root:not([data-theme="light"]) .theme-toggle .icon-sun{display:block}
+}
 .hero{padding:52px 0 52px}
 .hero-wrap{display:flex;align-items:center;gap:24px;flex-wrap:wrap}
 .avatar{width:160px;height:160px;border-radius:999px;object-fit:cover;border:2px solid var(--line)}
