@@ -1,20 +1,47 @@
-document.getElementById('year').textContent = new Date().getFullYear();
+const yearNode = document.getElementById('year');
+if (yearNode) yearNode.textContent = new Date().getFullYear();
 
 const root = document.documentElement;
 const themeToggle = document.getElementById('themeToggle');
-const savedTheme = localStorage.getItem('theme');
-const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
 
-root.setAttribute('data-theme', initialTheme);
+const storage = {
+  get(key) {
+    try { return localStorage.getItem(key); } catch (_) { return null; }
+  },
+  set(key, value) {
+    try { localStorage.setItem(key, value); } catch (_) {}
+  }
+};
+
+const applyTheme = (theme) => root.setAttribute('data-theme', theme === 'dark' ? 'dark' : 'light');
+
+const savedTheme = storage.get('theme');
+if (savedTheme === 'dark' || savedTheme === 'light') {
+  applyTheme(savedTheme);
+} else {
+  applyTheme(mediaQuery.matches ? 'dark' : 'light');
+}
 
 if (themeToggle) {
   themeToggle.addEventListener('click', () => {
     const current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
     const next = current === 'dark' ? 'light' : 'dark';
-    root.setAttribute('data-theme', next);
-    localStorage.setItem('theme', next);
+    applyTheme(next);
+    storage.set('theme', next);
   });
+}
+
+const onSchemeChange = (event) => {
+  if (!storage.get('theme')) {
+    applyTheme(event.matches ? 'dark' : 'light');
+  }
+};
+
+if (typeof mediaQuery.addEventListener === 'function') {
+  mediaQuery.addEventListener('change', onSchemeChange);
+} else if (typeof mediaQuery.addListener === 'function') {
+  mediaQuery.addListener(onSchemeChange);
 }
 
 const countWords = (text) => (text.trim().match(/[A-Za-zА-Яа-я0-9@']+/g) || []).length;
