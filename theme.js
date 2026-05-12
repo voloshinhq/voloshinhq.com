@@ -20,28 +20,22 @@ const savedTheme = storage.get('theme');
 if (savedTheme === 'dark' || savedTheme === 'light') {
   applyTheme(savedTheme);
 } else {
-  applyTheme(mediaQuery.matches ? 'dark' : 'light');
+  root.removeAttribute('data-theme');
 }
+
+const getEffectiveTheme = () => {
+  const manual = root.getAttribute('data-theme');
+  if (manual === 'dark' || manual === 'light') return manual;
+  return mediaQuery.matches ? 'dark' : 'light';
+};
 
 if (themeToggle) {
   themeToggle.addEventListener('click', () => {
-    const current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    const current = getEffectiveTheme();
     const next = current === 'dark' ? 'light' : 'dark';
     applyTheme(next);
     storage.set('theme', next);
   });
-}
-
-const onSchemeChange = (event) => {
-  if (!storage.get('theme')) {
-    applyTheme(event.matches ? 'dark' : 'light');
-  }
-};
-
-if (typeof mediaQuery.addEventListener === 'function') {
-  mediaQuery.addEventListener('change', onSchemeChange);
-} else if (typeof mediaQuery.addListener === 'function') {
-  mediaQuery.addListener(onSchemeChange);
 }
 
 const countWords = (text) => (text.trim().match(/[A-Za-zА-Яа-я0-9@']+/g) || []).length;
