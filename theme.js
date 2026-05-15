@@ -1,3 +1,6 @@
+const yearNode = document.getElementById('year');
+if (yearNode) yearNode.textContent = new Date().getFullYear();
+
 const root = document.documentElement;
 const themeToggle = document.getElementById('themeToggle');
 const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
@@ -36,7 +39,7 @@ if (themeToggle) {
 }
 
 const countWords = (text) => (text.trim().match(/[A-Za-zА-Яа-я0-9@']+/g) || []).length;
-const minutesFromWords = (words) => Math.max(1, Math.ceil(words / 100));
+const minutesFromWords = (words) => Math.max(1, Math.ceil(words / 180));
 
 document.querySelectorAll('[data-read-minutes]').forEach((node) => {
   let words = 0;
