@@ -1,6 +1,3 @@
-const yearNode = document.getElementById('year');
-if (yearNode) yearNode.textContent = new Date().getFullYear();
-
 const root = document.documentElement;
 const themeToggle = document.getElementById('themeToggle');
 const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
