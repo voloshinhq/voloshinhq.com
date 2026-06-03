@@ -1,0 +1,28 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import type { Lang } from '../data/site';
+import { pathForLang, ui } from '../data/site';
+import { formatDate, readingTime } from '../data/utils';
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+  lang: Lang;
+}
+
+const { post, lang } = Astro.props;
+const copy = ui[lang].blog;
+const slug = post.id.replace(/^en\//, '').replace(/^ru\//, '').replace(/\.mdx?$/, '');
+---
+
+<article class="post-card reveal">
+  <div class="post-card-meta">
+    <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date, lang)}</time>
+    <span>•</span>
+    <span>{readingTime(post.body)} {copy.readTime}</span>
+  </div>
+  <h2><a href={pathForLang(lang, `/blog/${slug}`)}>{post.data.title}</a></h2>
+  <p>{post.data.description}</p>
+  <div class="tag-row">
+    {post.data.tags.map((tag) => <a href={pathForLang(lang, `/blog?tag=${encodeURIComponent(tag)}`)}>{tag}</a>)}
+  </div>
+</article>

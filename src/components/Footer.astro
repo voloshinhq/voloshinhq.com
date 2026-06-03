@@ -1,0 +1,23 @@
+---
+import SocialIcon from './SocialIcon.astro';
+import { pathForLang, socialLinks, type Lang } from '../data/site';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+---
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <a href={pathForLang(lang)} class="footer-brand">© {new Date().getFullYear()} Yaroslav Voloshin</a>
+    <div class="social-row" aria-label="Social links">
+      {socialLinks.map((item) => (
+        <a href={item.href} target={item.href.startsWith('http') ? '_blank' : undefined} rel={item.href.startsWith('http') ? 'noopener' : undefined} title={item.label} aria-label={item.label}>
+          <SocialIcon name={item.key} />
+        </a>
+      ))}
+    </div>
+  </div>
+</footer>

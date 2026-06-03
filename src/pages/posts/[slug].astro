@@ -1,0 +1,30 @@
+---
+import { getCollection } from 'astro:content';
+import { publishedPosts, slugFromPost } from '../../data/utils';
+
+export async function getStaticPaths() {
+  const posts = publishedPosts(await getCollection('blog'), 'ru');
+  return posts.map((post) => ({
+    params: { slug: slugFromPost(post) },
+    props: { post }
+  }));
+}
+
+const { post } = Astro.props;
+const slug = slugFromPost(post);
+const target = `/blog/${slug}`;
+---
+
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="noindex" />
+    <meta http-equiv="refresh" content={`0; url=${target}`} />
+    <link rel="canonical" href={target} />
+    <title>{post.data.title}</title>
+  </head>
+  <body>
+    <p><a href={target}>Open post</a></p>
+  </body>
+</html>

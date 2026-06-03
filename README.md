@@ -1,46 +1,66 @@
 # Yaroslav Voloshin's Personal Website
 
-This is the source code for my personal website, hosted on **https://voloshinhq.com**.
+Source code for the personal website at https://voloshinhq.com.
 
-## About
+## Stack
 
-I'm Yaroslav Voloshin. This repo contains my personal landing page and blog posts.
+- Astro static site
+- Markdown blog posts
+- Russian and English routes
+- Light and dark themes with localStorage persistence and system-theme fallback
 
 ## Project Structure
 
-```text
-├── index.html                                 # Main page
-├── posts/
-│   └── who-i-am-and-why-this-exists.html      # Blog post page
-├── styles.css                                  # Global styles
-├── theme.js                                    # Theme toggle + reading-time logic
-├── avatar.jpg                                  # Avatar + favicon source
-├── LICENSE                                     # MIT License
-└── README.md                                   # Project documentation
-```
+\`\`\`text
+├── src/
+│   ├── components/          # Shared Astro components
+│   ├── content/blog/        # Markdown posts by language
+│   ├── data/                # Site copy and helpers
+│   ├── layouts/             # Base layout
+│   ├── pages/               # Static routes
+│   └── styles/              # Global CSS
+├── public/                  # Static assets and client scripts
+├── dist/                    # Production build output
+├── astro.config.mjs
+├── package.json
+└── README.md
+\`\`\`
 
 ## Commands
 
 | Command | Action |
 | :-- | :-- |
-| `python3 -m http.server 8080` | Run local static preview |
-| `open http://localhost:8080` | Open local site |
-| `git add . && git commit -m "..." && git push` | Publish changes to GitHub |
+| \`npm install\` | Install dependencies |
+| \`npm run dev\` | Run local development server |
+| \`npm run build\` | Type-check and build static files into \`dist/\` |
+| \`npm run preview\` | Preview the production build locally |
 
 ## Deployment
 
-This site is deployed on my server with **Nginx** and **Let's Encrypt**.
+The site is compatible with Vercel and Cloudflare Pages.
 
-- Domain: `https://voloshinhq.com`
-- Canonical redirect: `www.voloshinhq.com` → `voloshinhq.com`
-- Web root: `/var/www/voloshinhq.com`
+- Build command: \`npm run build\`
+- Output directory: \`dist\`
 
-### Server sync
+The current server deployment uses Nginx with this web root:
 
-```bash
-rsync -av --delete --exclude '.git' ./ /var/www/voloshinhq.com/
-sudo nginx -t && sudo systemctl reload nginx
-```
+\`\`\`text
+/var/www/voloshinhq.com/dist
+\`\`\`
+
+After changing source files on the server:
+
+\`\`\`bash
+npm run build
+/usr/sbin/nginx -t
+systemctl reload nginx
+\`\`\`
+
+## Content
+
+Blog posts live in \`src/content/blog/{ru,en}/\`.
+
+Homepage copy, project placeholders, testimonials, and CTA text live in \`src/data/site.ts\`.
 
 ## License
 

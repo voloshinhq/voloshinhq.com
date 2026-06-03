@@ -1,0 +1,48 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { ui } from '../../data/site';
+import { formatDate, publishedPosts, readingTime, slugFromPost } from '../../data/utils';
+
+export async function getStaticPaths() {
+  const posts = publishedPosts(await getCollection('blog'), 'ru');
+  return posts.map((post, index) => ({
+    params: { slug: slugFromPost(post) },
+    props: {
+      post,
+      previous: posts[index + 1] ?? null,
+      next: posts[index - 1] ?? null
+    }
+  }));
+}
+
+const lang = 'ru';
+const { post, previous, next } = Astro.props;
+const { Content } = await render(post);
+const copy = ui[lang].blog;
+---
+
+<BaseLayout lang={lang} title={post.data.title} description={post.data.description}>
+  <div class="read-progress" aria-hidden="true"><span></span></div>
+  <article class="container article">
+    <header class="article-head">
+      <div class="post-card-meta">
+        <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date, lang)}</time>
+        <span>•</span>
+        <span>{readingTime(post.body)} {copy.readTime}</span>
+      </div>
+      <h1>{post.data.title}</h1>
+      <p>{post.data.description}</p>
+      <div class="tag-row">
+        {post.data.tags.map((tag) => <a href={`/blog?tag=${encodeURIComponent(tag)}`}>{tag}</a>)}
+      </div>
+    </header>
+    <div class="prose reveal">
+      <Content />
+    </div>
+    <nav class="post-nav" aria-label="Post navigation">
+      <div>{previous && <a href={`/blog/${slugFromPost(previous)}`}>← {copy.previous}<span>{previous.data.title}</span></a>}</div>
+      <div>{next && <a href={`/blog/${slugFromPost(next)}`}>{copy.next} →<span>{next.data.title}</span></a>}</div>
+    </nav>
+  </article>
+</BaseLayout>
