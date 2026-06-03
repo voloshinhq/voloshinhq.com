@@ -1,5 +1,11 @@
 const revealItems = document.querySelectorAll('.reveal');
 
+document.querySelectorAll('[data-lang-switch]').forEach((link) => {
+  link.addEventListener('click', () => {
+    try { localStorage.setItem('language-choice', link.dataset.langSwitch || ''); } catch (_) {}
+  });
+});
+
 if ('IntersectionObserver' in window) {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {

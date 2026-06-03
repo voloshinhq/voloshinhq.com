@@ -6,7 +6,7 @@ Source code for the personal website at https://voloshinhq.com.
 
 - Astro static site
 - Markdown blog posts
-- Russian and English routes
+- English default routes and Russian routes under \`/ru\`
 - Light and dark themes with localStorage persistence and system-theme fallback
 
 ## Project Structure
@@ -61,6 +61,9 @@ systemctl reload nginx
 Blog posts live in \`src/content/blog/{ru,en}/\`.
 
 Homepage copy, project placeholders, testimonials, and CTA text live in \`src/data/site.ts\`.
+
+The root route \`/\` is English. Russian content lives under \`/ru\`.
+On first visit to \`/\`, a small inline script checks the browser languages and redirects Russian-language users to \`/ru\` unless they already picked a language manually.
 
 ## License
 

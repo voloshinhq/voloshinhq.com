@@ -28,7 +28,7 @@ const pageDescription = description ?? copy.metaDescription;
     <link rel="icon" type="image/jpeg" href="/avatar.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <script is:inline>
       (function () {
         try {
@@ -39,6 +39,20 @@ const pageDescription = description ?? copy.metaDescription;
         } catch (_) {}
       })();
     </script>
+    {lang === 'en' && Astro.url.pathname === '/' && (
+      <script is:inline>
+        {`
+          (function () {
+            try {
+              if (localStorage.getItem('language-choice')) return;
+              var languages = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language];
+              var wantsRussian = languages.some(function (item) { return /^ru\\b/i.test(item || ''); });
+              if (wantsRussian) window.location.replace('/ru');
+            } catch (_) {}
+          })();
+        `}
+      </script>
+    )}
   </head>
   <body>
     <Header lang={lang} pathname={Astro.url.pathname} />

@@ -5,7 +5,7 @@ import { ui } from '../../../data/site';
 import { formatDate, publishedPosts, readingTime, slugFromPost } from '../../../data/utils';
 
 export async function getStaticPaths() {
-  const posts = publishedPosts(await getCollection('blog'), 'en');
+  const posts = publishedPosts(await getCollection('blog'), 'ru');
   return posts.map((post, index) => ({
     params: { slug: slugFromPost(post) },
     props: {
@@ -16,7 +16,7 @@ export async function getStaticPaths() {
   }));
 }
 
-const lang = 'en';
+const lang = 'ru';
 const { post, previous, next } = Astro.props;
 const { Content } = await render(post);
 const copy = ui[lang].blog;
@@ -34,15 +34,15 @@ const copy = ui[lang].blog;
       <h1>{post.data.title}</h1>
       <p>{post.data.description}</p>
       <div class="tag-row">
-        {post.data.tags.map((tag) => <a href={`/en/blog?tag=${encodeURIComponent(tag)}`}>{tag}</a>)}
+        {post.data.tags.map((tag) => <a href={`/ru/blog?tag=${encodeURIComponent(tag)}`}>{tag}</a>)}
       </div>
     </header>
     <div class="prose reveal">
       <Content />
     </div>
     <nav class="post-nav" aria-label="Post navigation">
-      <div>{previous && <a href={`/en/blog/${slugFromPost(previous)}`}>← {copy.previous}<span>{previous.data.title}</span></a>}</div>
-      <div>{next && <a href={`/en/blog/${slugFromPost(next)}`}>{copy.next} →<span>{next.data.title}</span></a>}</div>
+      <div>{previous && <a href={`/ru/blog/${slugFromPost(previous)}`}>← {copy.previous}<span>{previous.data.title}</span></a>}</div>
+      <div>{next && <a href={`/ru/blog/${slugFromPost(next)}`}>{copy.next} →<span>{next.data.title}</span></a>}</div>
     </nav>
   </article>
 </BaseLayout>

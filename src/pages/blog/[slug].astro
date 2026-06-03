@@ -5,7 +5,7 @@ import { ui } from '../../data/site';
 import { formatDate, publishedPosts, readingTime, slugFromPost } from '../../data/utils';
 
 export async function getStaticPaths() {
-  const posts = publishedPosts(await getCollection('blog'), 'ru');
+  const posts = publishedPosts(await getCollection('blog'), 'en');
   return posts.map((post, index) => ({
     params: { slug: slugFromPost(post) },
     props: {
@@ -16,7 +16,7 @@ export async function getStaticPaths() {
   }));
 }
 
-const lang = 'ru';
+const lang = 'en';
 const { post, previous, next } = Astro.props;
 const { Content } = await render(post);
 const copy = ui[lang].blog;

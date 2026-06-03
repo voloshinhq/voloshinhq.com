@@ -1,7 +1,7 @@
 export type Lang = 'ru' | 'en';
 
-export const defaultLang: Lang = 'ru';
-export const languages: Lang[] = ['ru', 'en'];
+export const defaultLang: Lang = 'en';
+export const languages: Lang[] = ['en', 'ru'];
 
 export const socialLinks = [
   { key: 'github', label: 'GitHub', href: 'https://github.com/voloshinhq' },
@@ -15,7 +15,6 @@ export const ui = {
     metaTitle: 'Ярослав Волошин — инженер',
     metaDescription: 'Персональный сайт Ярослава Волошина: инженерные заметки, проекты и ссылки.',
     nav: {
-      home: 'Главная',
       blog: 'Блог',
       projects: 'Проекты',
       contact: 'Контакт'
@@ -56,7 +55,7 @@ export const ui = {
         {
           title: 'Project monitoring',
           text: 'Слой наблюдаемости для сайтов, сервисов и серверов, чтобы видеть проблемы раньше пользователей.',
-          href: '/blog/project-monitoring-you-cant-scale-without-it',
+          href: '/ru/blog/project-monitoring-you-cant-scale-without-it',
           tags: ['Monitoring', 'Linux', 'Ops']
         },
         {
@@ -101,7 +100,6 @@ export const ui = {
     metaTitle: 'Yaroslav Voloshin — Engineer',
     metaDescription: 'Personal website of Yaroslav Voloshin: engineering notes, projects, and links.',
     nav: {
-      home: 'Home',
       blog: 'Blog',
       projects: 'Projects',
       contact: 'Contact'
