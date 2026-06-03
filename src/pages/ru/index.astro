@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PostCard from '../../components/PostCard.astro';
 import SocialIcon from '../../components/SocialIcon.astro';
-import { pathForLang, socialLinks, ui } from '../../data/site';
+import { ctaTelegramHref, pathForLang, socialLinks, ui } from '../../data/site';
 import { publishedPosts } from '../../data/utils';
 
 const lang = 'ru';
@@ -19,7 +19,7 @@ const posts = publishedPosts(await getCollection('blog'), lang).slice(0, 3);
       <h1>{copy.hero.title}</h1>
       <p class="lead">{copy.hero.text}</p>
       <div class="social-row hero-social" aria-label="Social links">
-        {socialLinks.map((item) => (
+        {socialLinks(lang).map((item) => (
           <a href={item.href} target={item.href.startsWith('http') ? '_blank' : undefined} rel={item.href.startsWith('http') ? 'noopener' : undefined} title={item.label} aria-label={item.label}>
             <SocialIcon name={item.key} />
           </a>
@@ -102,7 +102,7 @@ const posts = publishedPosts(await getCollection('blog'), lang).slice(0, 3);
       <h2>{copy.cta.title}</h2>
       <p>{copy.cta.text}</p>
       <div class="cta-actions">
-        <a class="button primary" href="https://t.me/voloshinhq" target="_blank" rel="noopener">{copy.cta.primary}</a>
+        <a class="button primary" href={ctaTelegramHref} target="_blank" rel="noopener">{copy.cta.primary}</a>
         <a class="button ghost" href="mailto:voloshinhq@gmail.com">{copy.cta.secondary}</a>
       </div>
     </div>

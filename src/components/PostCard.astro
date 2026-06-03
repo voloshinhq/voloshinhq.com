@@ -22,7 +22,4 @@ const slug = post.id.replace(/^en\//, '').replace(/^ru\//, '').replace(/\.mdx?$/
   </div>
   <h2><a href={pathForLang(lang, `/blog/${slug}`)}>{post.data.title}</a></h2>
   <p>{post.data.description}</p>
-  <div class="tag-row">
-    {post.data.tags.map((tag) => <a href={pathForLang(lang, `/blog?tag=${encodeURIComponent(tag)}`)}>{tag}</a>)}
-  </div>
 </article>

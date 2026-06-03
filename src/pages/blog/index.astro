@@ -8,28 +8,16 @@ import { publishedPosts } from '../../data/utils';
 const lang = 'en';
 const copy = ui[lang].blog;
 const posts = publishedPosts(await getCollection('blog'), lang);
-const tags = [...new Set(posts.flatMap((post) => post.data.tags))].sort();
 ---
 
 <BaseLayout lang={lang} title={copy.title} description={copy.description}>
   <section class="container page-head">
-    <p class="eyebrow">Voloshin HQ</p>
     <h1>{copy.title}</h1>
-    <p>{copy.description}</p>
   </section>
 
   <section class="container section">
-    <div class="tag-filter" data-tag-filter>
-      <button class="active" type="button" data-tag="all">{copy.allTags}</button>
-      {tags.map((tag) => <button type="button" data-tag={tag}>{tag}</button>)}
+    <div class="post-list">
+      {posts.map((post) => <PostCard post={post} lang={lang} />)}
     </div>
-    <div class="post-list" data-post-list>
-      {posts.map((post, index) => (
-        <div data-post-item data-tags={post.data.tags.join(',')} data-index={index}>
-          <PostCard post={post} lang={lang} />
-        </div>
-      ))}
-    </div>
-    <button class="button ghost load-more" type="button" data-load-more>{copy.loadMore}</button>
   </section>
 </BaseLayout>

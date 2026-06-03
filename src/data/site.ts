@@ -3,12 +3,15 @@ export type Lang = 'ru' | 'en';
 export const defaultLang: Lang = 'en';
 export const languages: Lang[] = ['en', 'ru'];
 
-export const socialLinks = [
+export const socialLinks = (lang: Lang) => [
   { key: 'github', label: 'GitHub', href: 'https://github.com/voloshinhq' },
   { key: 'x', label: 'X', href: 'https://x.com/voloshinhq' },
-  { key: 'telegram', label: 'Telegram', href: 'https://t.me/voloshinhq' },
+  { key: 'telegram', label: 'Telegram', href: lang === 'ru' ? 'https://t.me/voloshinhq_ru' : 'https://t.me/voloshinhq' },
   { key: 'email', label: 'Email', href: 'mailto:voloshinhq@gmail.com' }
 ];
+
+export const ctaTelegramHref = 'https://t.me/voloshin_hq';
+export const licenseHref = 'https://github.com/voloshinhq/voloshinhq.com/blob/main/LICENSE';
 
 export const ui = {
   ru: {
