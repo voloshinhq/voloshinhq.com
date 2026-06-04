@@ -109,9 +109,10 @@ h3 { font-size: var(--fs-heading); line-height: 1.24; font-weight: 650; }
 .section-head { display: grid; gap: 12px; margin-bottom: 24px; }
 .section-head p { max-width: 720px; margin: 0; color: var(--muted); font-size: var(--fs-text); }
 .row-head { grid-template-columns: 1fr auto; align-items: end; }
-.mode-grid, .testimonial-grid, .post-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
-.testimonial-grid, .post-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-.card, .quote-card, .post-card { min-width: 0; border: 0; border-radius: 8px; background: color-mix(in srgb, var(--surface) 92%, transparent); }
+.mode-grid, .testimonial-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.testimonial-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.post-grid { display: grid; grid-template-columns: 1fr; gap: 0; }
+.card, .quote-card { min-width: 0; border: 0; border-radius: 8px; background: color-mix(in srgb, var(--surface) 92%, transparent); }
 .card { padding: 26px; }
 .card p, .quote-card blockquote, .post-card p, .project-row p { color: var(--muted); }
 .card p { margin: 12px 0 0; }
@@ -128,12 +129,13 @@ h3 { font-size: var(--fs-heading); line-height: 1.24; font-weight: 650; }
 .quote-card blockquote { margin: 0; font-size: var(--fs-text); }
 .quote-card figcaption { display: grid; gap: 2px; margin-top: 28px; }
 .quote-card figcaption span { color: var(--muted); font-size: var(--fs-small); }
-.post-card { display: grid; gap: 12px; padding: 22px; }
+.post-card { display: grid; grid-template-columns: 150px minmax(0, 1fr); column-gap: 24px; row-gap: 6px; padding: 18px 0; border-top: 1px solid var(--line); background: transparent; }
+.post-card:last-child { border-bottom: 1px solid var(--line); }
 .post-card h2 { font-size: var(--fs-heading); }
 .post-card h2 a { text-decoration: none; }
 .post-card h2 a:hover { color: var(--accent); }
-.post-card p { margin: 0; }
-.post-card-meta { display: flex; flex-wrap: wrap; gap: 8px; color: var(--muted); font-size: var(--fs-small); }
+.post-card p { max-width: 640px; margin: 0; }
+.post-card-meta { grid-row: 1 / span 2; display: flex; flex-wrap: wrap; align-content: start; gap: 8px; color: var(--muted); font-size: var(--fs-small); }
 .cta { display: grid; justify-items: start; gap: 18px; padding: clamp(30px, 5vw, 56px); border: 0; border-radius: 8px; background: var(--surface); color: var(--text); }
 .cta p { max-width: 680px; margin: 0; color: var(--muted); font-size: var(--fs-text); }
 .cta-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
@@ -143,7 +145,7 @@ h3 { font-size: var(--fs-heading); line-height: 1.24; font-weight: 650; }
 .page-head { padding: 76px 0 20px; }
 .page-head h1 { font-size: var(--fs-title); }
 .page-head p:not(.eyebrow) { max-width: 640px; margin: 18px 0 0; color: var(--muted); font-size: var(--fs-text); }
-.post-list { display: grid; gap: 14px; }
+.post-list { display: grid; gap: 0; }
 .article { width: min(800px, calc(100vw - 40px)); padding: 72px 0; }
 .article-head { display: grid; gap: 18px; margin-bottom: 42px; }
 .article-head h1 { font-size: var(--fs-title); line-height: 1.04; }
@@ -187,7 +189,9 @@ h3 { font-size: var(--fs-heading); line-height: 1.24; font-weight: 650; }
   .hero-copy { display: grid; justify-items: center; }
   .hero-avatar { width: 118px; }
   .hero-social { justify-content: center; }
-  .statement, .card, .quote-card, .post-card, .cta { padding: 20px; }
+  .post-card { grid-template-columns: 1fr; gap: 8px; padding: 18px 0; }
+  .post-card-meta { grid-row: auto; }
+  .statement, .card, .quote-card, .cta { padding: 20px; }
   .footer-inner { align-items: flex-start; flex-direction: column; }
 }
 
