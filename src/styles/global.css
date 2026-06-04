@@ -20,8 +20,8 @@
   :root:not([data-theme='light']) {
     color-scheme: dark;
     --bg: #000000;
-    --surface: #0a0a08;
-    --surface-2: #0a0a08;
+    --surface: #1d1d1f;
+    --surface-2: #1d1d1f;
     --text: #f4f2ea;
     --muted: #a8acb5;
     --line: #242420;
@@ -34,8 +34,8 @@
 :root[data-theme='dark'] {
   color-scheme: dark;
   --bg: #000000;
-  --surface: #0a0a08;
-  --surface-2: #0a0a08;
+  --surface: #1d1d1f;
+  --surface-2: #1d1d1f;
   --text: #f4f2ea;
   --muted: #a8acb5;
   --line: #242420;
