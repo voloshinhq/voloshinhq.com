@@ -110,7 +110,7 @@ export const ui = {
     hero: {
       eyebrow: 'Engineer. Building personal and commercial products.',
       title: 'Yaroslav Voloshin',
-      text: 'I build practical tools for people who work on laptops and desktops. I write about products, infrastructure, and how AI changes engineering work.'
+      text: 'Инженер. Строю проекты с 2020 года — от первых пет-проектов до инструментов с реальными пользователями. Увлекаюсь Формулой 1. Добро пожаловать в мой уголок интернета.'
     },
     shift: {
       label: 'The world changed',
