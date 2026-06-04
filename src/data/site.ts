@@ -25,7 +25,7 @@ export const ui = {
     hero: {
       eyebrow: 'Инженер. Строю личные и коммерческие продукты.',
       title: 'Ярослав Волошин',
-      text: 'Инженер. Строю проекты с 2020 года - от первых пет-проектов до инструментов с реальными пользователями. Увлекаюсь Формулой 1. Добро пожаловать в мой уголок интернета.'
+      text: 'Инженер. Строю проекты с 2020 года. Начинал с пет-проектов, сейчас делаю инструменты с реальными пользователями. Увлекаюсь Формулой 1. Добро пожаловать в мой уголок интернета.'
     },
     shift: {
       label: 'Мир изменился',
@@ -110,7 +110,7 @@ export const ui = {
     hero: {
       eyebrow: 'Engineer. Building personal and commercial products.',
       title: 'Yaroslav Voloshin',
-      text: 'Engineer. I have been building projects since 2020 - from early pet projects to tools with real users. I am into Formula 1. Welcome to my corner of the internet.'
+      text: 'Engineer. I have been building projects since 2020. I started with pet projects, and now I build tools with real users. I am into Formula 1. Welcome to my corner of the internet.'
     },
     shift: {
       label: 'The world changed',
