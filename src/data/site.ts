@@ -15,7 +15,7 @@ export const licenseHref = 'https://github.com/voloshinhq/voloshinhq.com/blob/ma
 
 export const ui = {
   ru: {
-    metaTitle: 'Ярослав Волошин — инженер',
+    metaTitle: 'Ярослав Волошин - инженер',
     metaDescription: 'Персональный сайт Ярослава Волошина: инженерные заметки, проекты и ссылки.',
     nav: {
       blog: 'Блог',
@@ -25,7 +25,7 @@ export const ui = {
     hero: {
       eyebrow: 'Инженер. Строю личные и коммерческие продукты.',
       title: 'Ярослав Волошин',
-      text: 'Инженер. Строю проекты с 2020 года — от первых пет-проектов до инструментов с реальными пользователями. Увлекаюсь Формулой 1. Добро пожаловать в мой уголок интернета.'
+      text: 'Инженер. Строю проекты с 2020 года - от первых пет-проектов до инструментов с реальными пользователями. Увлекаюсь Формулой 1. Добро пожаловать в мой уголок интернета.'
     },
     shift: {
       label: 'Мир изменился',
@@ -100,7 +100,7 @@ export const ui = {
     }
   },
   en: {
-    metaTitle: 'Yaroslav Voloshin — Engineer',
+    metaTitle: 'Yaroslav Voloshin - Engineer',
     metaDescription: 'Personal website of Yaroslav Voloshin: engineering notes, projects, and links.',
     nav: {
       blog: 'Blog',
@@ -110,7 +110,7 @@ export const ui = {
     hero: {
       eyebrow: 'Engineer. Building personal and commercial products.',
       title: 'Yaroslav Voloshin',
-      text: 'Инженер. Строю проекты с 2020 года — от первых пет-проектов до инструментов с реальными пользователями. Увлекаюсь Формулой 1. Добро пожаловать в мой уголок интернета.'
+      text: 'Engineer. I have been building projects since 2020 - from early pet projects to tools with real users. I am into Formula 1. Welcome to my corner of the internet.'
     },
     shift: {
       label: 'The world changed',
