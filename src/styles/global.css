@@ -10,10 +10,10 @@
   --accent-2: #9b2f2f;
   --shadow: 0 18px 48px rgba(23, 23, 23, 0.08);
   --site-width: 1000px;
-  --fs-title: 56px;
-  --fs-heading: 30px;
-  --fs-text: 17px;
-  --fs-small: 14px;
+  --fs-title: 46px;
+  --fs-heading: 24px;
+  --fs-text: 16px;
+  --fs-small: 13px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -182,7 +182,7 @@ h3 { font-size: var(--fs-heading); line-height: 1.16; font-weight: 700; }
 @media (max-width: 520px) {
   .section { padding: 38px 0; }
   .hero { padding-bottom: 38px; }
-  :root { --fs-title: 36px; --fs-heading: 24px; --fs-text: 16px; --fs-small: 13px; }
+  :root { --fs-title: 32px; --fs-heading: 21px; --fs-text: 15px; --fs-small: 12px; }
   .hero { grid-template-columns: 1fr; justify-items: center; text-align: center; }
   .hero-copy { display: grid; justify-items: center; }
   .hero-avatar { width: 118px; }
