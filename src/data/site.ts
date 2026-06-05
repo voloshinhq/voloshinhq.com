@@ -114,8 +114,8 @@ export const ui = {
     },
     shift: {
       label: 'The world changed',
-      title: 'AI writes code now. Does that mean you no longer need an engineer?',
-      text: 'No. It means the valuable person is the one who understands the problem, holds the system in their head, and owns the outcome. Code got cheaper. Wrong direction is still expensive.'
+      title: 'Codex and Claude write great code. Do engineers still matter?',
+      text: 'Generating working code is very easy today. AI does it better and faster than juniors did before AI. But code is not a product. Writing code got cheap. The cost of a wrong direction did not change. That is why engineers who understand the system and own the outcome still matter to the business.'
     },
     modes: {
       title: 'Two Work Modes',
