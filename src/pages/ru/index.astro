@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PostCard from '../../components/PostCard.astro';
 import SocialIcon from '../../components/SocialIcon.astro';
-import { ctaTelegramHref, pathForLang, socialLinks, ui } from '../../data/site';
+import { calendlyHref, ctaTelegramHref, pathForLang, socialLinks, ui } from '../../data/site';
 import { publishedPosts } from '../../data/utils';
 
 const lang = 'ru';
@@ -103,6 +103,7 @@ const posts = publishedPosts(await getCollection('blog'), lang).slice(0, 3);
       <div class="cta-actions">
         <a class="button primary" href={ctaTelegramHref} target="_blank" rel="noopener">{copy.cta.primary}</a>
         <a class="button ghost" href="mailto:voloshinhq@gmail.com">{copy.cta.secondary}</a>
+        <a class="button ghost" href={calendlyHref} data-calendly-popup>{copy.cta.tertiary}</a>
       </div>
     </div>
   </section>

@@ -11,6 +11,7 @@ export const socialLinks = (lang: Lang) => [
 ];
 
 export const ctaTelegramHref = 'https://t.me/voloshin_hq';
+export const calendlyHref = 'https://calendly.com/voloshinhq/30min';
 export const licenseHref = 'https://github.com/voloshinhq/voloshinhq.com/blob/main/LICENSE';
 
 export const ui = {
@@ -83,9 +84,10 @@ export const ui = {
     },
     cta: {
       title: 'Давайте поговорим',
-      text: 'Если у вас есть идея, проект или сложный инженерный вопрос, напишите в Telegram или на email. Без формы, без лишних шагов.',
+      text: 'Если у вас есть идея, проект или сложный инженерный вопрос, напишите в Telegram. Если удобнее, можно написать на email или забронировать короткий созвон.',
       primary: 'Написать в Telegram',
-      secondary: 'Email'
+      secondary: 'Email',
+      tertiary: 'Забронировать встречу'
     },
     blog: {
       title: 'Блог',
@@ -168,9 +170,10 @@ export const ui = {
     },
     cta: {
       title: 'Let\'s Talk',
-      text: 'If you have an idea, a project, or a hard engineering question, write on Telegram or email. No form, no extra steps.',
+      text: 'If you have an idea, a project, or a hard engineering question, message me on Telegram. If easier, you can email me or book a short call.',
       primary: 'Message on Telegram',
-      secondary: 'Email'
+      secondary: 'Email',
+      tertiary: 'Book a meeting'
     },
     blog: {
       title: 'Blog',

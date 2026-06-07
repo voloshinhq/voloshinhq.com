@@ -27,9 +27,11 @@ const pageDescription = description ?? copy.metaDescription;
     <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="alternate icon" type="image/jpeg" href="/avatar.jpg" />
+    <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <script is:inline src="https://assets.calendly.com/assets/external/widget.js" async></script>
     <script is:inline>
       (function () {
         try {
@@ -62,6 +64,6 @@ const pageDescription = description ?? copy.metaDescription;
     </main>
     <Footer lang={lang} />
     <script is:inline src="/theme.js"></script>
-    <script is:inline src="/site.js"></script>
+    <script is:inline src="/site.js?v=20260607-2"></script>
   </body>
 </html>
