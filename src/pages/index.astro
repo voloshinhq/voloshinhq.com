@@ -5,13 +5,14 @@ import PostCard from '../components/PostCard.astro';
 import SocialIcon from '../components/SocialIcon.astro';
 import { calendlyHref, ctaTelegramHref, pathForLang, socialLinks, ui } from '../data/site';
 import { publishedPosts } from '../data/utils';
+import { personSchema, websiteSchema } from '../data/seo';
 
 const lang = 'en';
 const copy = ui[lang];
 const posts = publishedPosts(await getCollection('blog'), lang).slice(0, 3);
 ---
 
-<BaseLayout lang={lang}>
+<BaseLayout lang={lang} structuredData={[personSchema(lang), websiteSchema(lang)]}>
   <section class="hero container">
     <img class="avatar hero-avatar reveal" src="/avatar.jpg" alt="Yaroslav Voloshin" />
     <div class="hero-copy reveal">

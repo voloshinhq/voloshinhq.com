@@ -3,6 +3,7 @@ import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { ui } from '../../../data/site';
 import { formatDate, publishedPosts, readingTime, slugFromPost } from '../../../data/utils';
+import { blogPostingSchema, breadcrumbSchema } from '../../../data/seo';
 
 export async function getStaticPaths() {
   const posts = publishedPosts(await getCollection('blog'), 'ru');
@@ -20,9 +21,11 @@ const lang = 'ru';
 const { post, previous, next } = Astro.props;
 const { Content } = await render(post);
 const copy = ui[lang].blog;
+const slug = slugFromPost(post);
+const path = `/ru/blog/${slug}`;
 ---
 
-<BaseLayout lang={lang} title={post.data.title} description={post.data.description}>
+<BaseLayout lang={lang} title={post.data.title} description={post.data.description} ogType="article" structuredData={[blogPostingSchema(post, lang, path), breadcrumbSchema([{ name: 'Главная', path: '/ru' }, { name: copy.title, path: '/ru/blog' }, { name: post.data.title, path }])]}>
   <div class="read-progress" aria-hidden="true"><span></span></div>
   <article class="container article">
     <header class="article-head">

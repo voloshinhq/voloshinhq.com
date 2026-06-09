@@ -4,13 +4,14 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import PostCard from '../../../components/PostCard.astro';
 import { ui } from '../../../data/site';
 import { publishedPosts } from '../../../data/utils';
+import { breadcrumbSchema } from '../../../data/seo';
 
 const lang = 'ru';
 const copy = ui[lang].blog;
 const posts = publishedPosts(await getCollection('blog'), lang);
 ---
 
-<BaseLayout lang={lang} title={copy.title} description={copy.description}>
+<BaseLayout lang={lang} title={copy.title} description={copy.description} structuredData={breadcrumbSchema([{ name: 'Главная', path: '/ru' }, { name: copy.title, path: '/ru/blog' }])}>
   <section class="container article page-head">
     <h1>{copy.title}</h1>
   </section>
