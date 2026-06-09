@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  lang="ru"
+  title="Страница не найдена"
+  description="Эта страница не существует или была перемещена."
+  robots="noindex"
+>
+  <section class="container section not-found">
+    <div class="statement reveal">
+      <span>404</span>
+      <h1>Страница не найдена</h1>
+      <p>Возможно, ссылка устарела или адрес введён с ошибкой. Попробуйте главную страницу или блог.</p>
+      <div class="cta-actions">
+        <a class="button primary" href="/ru">Главная</a>
+        <a class="button ghost" href="/ru/blog">Блог</a>
+        <a class="button ghost" href="/">English</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
