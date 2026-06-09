@@ -20,4 +20,13 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       </div>
     </div>
   </section>
+  <script is:inline>
+    (function () {
+      var switcher = document.querySelector('[data-lang-switch]');
+      if (!switcher) return;
+      var path = window.location.pathname || '/ru';
+      var target = path.replace(/^\/ru(?=\/|$)/, '') || '/';
+      switcher.setAttribute('href', target);
+    })();
+  </script>
 </BaseLayout>
