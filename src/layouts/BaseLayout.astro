@@ -11,10 +11,11 @@ interface Props {
   description?: string;
   image?: string;
   ogType?: 'website' | 'article';
+  robots?: string;
   structuredData?: unknown;
 }
 
-const { lang, title, description, image, ogType = 'website', structuredData } = Astro.props;
+const { lang, title, description, image, ogType = 'website', robots, structuredData } = Astro.props;
 const copy = ui[lang];
 const pageTitle = title ? `${title} — Yaroslav Voloshin` : copy.metaTitle;
 const pageDescription = description ?? copy.metaDescription;
@@ -33,6 +34,7 @@ const ruUrl = new URL(ruPath, Astro.site).toString();
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{pageTitle}</title>
     <meta name="description" content={pageDescription} />
+    {robots && <meta name="robots" content={robots} />}
     <link rel="canonical" href={pageUrl} />
     <link rel="alternate" hreflang="en" href={enUrl} />
     <link rel="alternate" hreflang="ru" href={ruUrl} />
