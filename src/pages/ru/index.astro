@@ -61,9 +61,6 @@ const posts = publishedPosts(await getCollection('blog'), lang).slice(0, 3);
             <h3><a href={project.href}>{project.title}</a></h3>
             <p>{project.text}</p>
           </div>
-          <div class="tag-row">
-            {project.tags.map((tag) => <span>{tag}</span>)}
-          </div>
         </article>
       ))}
     </div>

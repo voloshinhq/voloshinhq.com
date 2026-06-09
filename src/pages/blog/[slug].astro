@@ -28,7 +28,6 @@ const copy = ui[lang].blog;
     <header class="article-head">
       <div class="post-card-meta">
         <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date, lang)}</time>
-        <span>•</span>
         <span>{readingTime(post.body)} {copy.readTime}</span>
       </div>
       <h1>{post.data.title}</h1>
