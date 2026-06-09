@@ -48,34 +48,31 @@ export const ui = {
     },
     projects: {
       title: 'Проекты',
-      intro: 'Несколько личных и коммерческих направлений. Тексты здесь заглушки, структуру можно быстро наполнить реальными деталями.',
+      intro: 'Избранные продукты и инженерные системы, которые я строю, поддерживаю или развиваю публично.',
       items: [
         {
           title: 'OpenClaw workflow',
-          text: 'Личная инженерная среда с AI-агентами, автоматизацией задач и инфраструктурным мониторингом.',
-          href: 'https://voloshinhq.com',
-          tags: ['AI', 'Automation', 'Infra']
+          text: 'Личная инженерная среда с AI-агентами, автоматизацией задач, напоминаниями, проверками и рабочими процессами вокруг проектов.',
+          href: 'https://voloshinhq.com'
         },
         {
           title: 'Project monitoring',
-          text: 'Слой наблюдаемости для сайтов, сервисов и серверов, чтобы видеть проблемы раньше пользователей.',
-          href: '/ru/blog/project-monitoring-you-cant-scale-without-it',
-          tags: ['Monitoring', 'Linux', 'Ops']
+          text: 'Мониторинг сайтов, сервисов и серверов, чтобы раньше видеть сбои, деградацию и проблемы инфраструктуры.',
+          href: '/ru/blog/project-monitoring-you-cant-scale-without-it'
         },
         {
           title: 'Todon',
-          text: 'Черновик продукта вокруг to-do и done. Идея, которую можно развивать публично и небольшими релизами.',
-          href: '#',
-          tags: ['Product', 'SaaS', 'WIP']
+          text: 'Продуктовый эксперимент на стыке to-do и done: как делать прогресс видимым, выпускать маленькие части и держать честный цикл работы.',
+          href: '/ru/blog/building-in-public-ai-tools-and-todon'
         }
       ]
     },
     testimonials: {
-      title: 'Отзывы клиентов',
+      title: 'Как я работаю',
       items: [
-        { quote: 'Короткий отзыв клиента о скорости, ясности и качестве работы. Placeholder.', author: 'Имя клиента', role: 'Компания / роль' },
-        { quote: 'Здесь будет живой отзыв после согласования текста. Без маркетинговой воды.', author: 'Имя клиента', role: 'Проект' },
-        { quote: 'Ещё один короткий отзыв: конкретная польза, результат, почему было удобно работать.', author: 'Имя клиента', role: 'Продукт' }
+        { title: 'Быстро довожу до рабочего результата', text: 'Сначала фиксирую цель, ограничения и минимальный полезный результат. Потом двигаюсь короткими итерациями без лишней сложности.' },
+        { title: 'Думаю о продакшене заранее', text: 'Код, инфраструктура, мониторинг и поддержка должны быть понятны не только в момент запуска, но и через месяц после него.' },
+        { title: 'Общаюсь прямо и по делу', text: 'Показываю прогресс, риски и следующие шаги так, чтобы по проекту было легко принимать решения без лишней бюрократии.' }
       ]
     },
     latest: {
@@ -134,34 +131,31 @@ export const ui = {
     },
     projects: {
       title: 'Projects',
-      intro: 'A few personal and commercial directions. Copy here is placeholder, but the structure is ready for real details.',
+      intro: 'Selected products and engineering systems I build, maintain, or develop in public.',
       items: [
         {
           title: 'OpenClaw workflow',
-          text: 'A personal engineering environment with AI agents, task automation, and infrastructure monitoring.',
-          href: 'https://voloshinhq.com',
-          tags: ['AI', 'Automation', 'Infra']
+          text: 'A personal engineering environment with AI agents, task automation, reminders, checks, and project workflows.',
+          href: 'https://voloshinhq.com'
         },
         {
           title: 'Project monitoring',
-          text: 'An observability layer for websites, services, and servers to catch problems before users do.',
-          href: '/en/blog/project-monitoring-you-cant-scale-without-it',
-          tags: ['Monitoring', 'Linux', 'Ops']
+          text: 'Monitoring for websites, services, and servers to catch outages, degradation, and infrastructure problems earlier.',
+          href: '/blog/project-monitoring-you-cant-scale-without-it'
         },
         {
           title: 'Todon',
-          text: 'A product draft around to-do and done, designed to be developed in public through small releases.',
-          href: '#',
-          tags: ['Product', 'SaaS', 'WIP']
+          text: 'A product experiment between to-do and done: making progress visible, shipping small pieces, and keeping the work loop honest.',
+          href: '/blog/building-in-public-ai-tools-and-todon'
         }
       ]
     },
     testimonials: {
-      title: 'Client Notes',
+      title: 'How I work',
       items: [
-        { quote: 'A short client note about speed, clarity, and quality. Placeholder.', author: 'Client name', role: 'Company / role' },
-        { quote: 'A real approved quote will live here. No corporate filler.', author: 'Client name', role: 'Project' },
-        { quote: 'Another concise quote: concrete value, outcome, and why the work felt easy.', author: 'Client name', role: 'Product' }
+        { title: 'Get to a working result quickly', text: 'I define the goal, constraints, and smallest useful outcome first. Then I move in short iterations without unnecessary complexity.' },
+        { title: 'Think about production early', text: 'Code, infrastructure, monitoring, and support should stay understandable not only at launch, but a month later too.' },
+        { title: 'Communicate directly', text: 'I show progress, risks, and next steps clearly, so project decisions stay simple and grounded.' }
       ]
     },
     latest: {
