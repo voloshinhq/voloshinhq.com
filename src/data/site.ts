@@ -13,7 +13,6 @@ export const socialLinks = (lang: Lang) => [
 ];
 
 export const ctaTelegramHref = 'https://t.me/voloshin_hq';
-export const calMeetingHref = 'https://cal.com/voloshinhq/30min';
 export const licenseHref = 'https://github.com/voloshinhq/voloshinhq.com/blob/main/LICENSE';
 
 export const ui = {

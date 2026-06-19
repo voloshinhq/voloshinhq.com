@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PostCard from '../components/PostCard.astro';
 import SocialIcon from '../components/SocialIcon.astro';
-import { calMeetingHref, ctaTelegramHref, emailAddress, emailHref, pathForLang, socialLinks, ui } from '../data/site';
+import { ctaTelegramHref, emailAddress, emailHref, pathForLang, socialLinks, ui } from '../data/site';
 import { publishedPosts } from '../data/utils';
 import { personSchema, websiteSchema } from '../data/seo';
 
@@ -98,15 +98,15 @@ const posts = publishedPosts(await getCollection('blog'), lang).slice(0, 3);
       <p class="contact-email">{copy.cta.emailLabel}: <a href={emailHref}>{emailAddress}</a></p>
       <div class="cta-actions">
         <a class="button primary" href={ctaTelegramHref} target="_blank" rel="noopener">{copy.cta.primary}</a>
-        <a
+        <button
           class="button ghost"
-          href={calMeetingHref}
+          type="button"
           data-cal-link="voloshinhq/30min"
           data-cal-namespace="30min"
           data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'
         >
           {copy.cta.tertiary}
-        </a>
+        </button>
       </div>
     </div>
   </section>
