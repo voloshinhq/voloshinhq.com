@@ -143,9 +143,8 @@ h3 { font-size: var(--fs-heading); line-height: 1.24; font-weight: 650; }
 .cta { display: grid; justify-items: start; gap: 18px; padding: clamp(30px, 5vw, 56px); border: 0; border-radius: 8px; background: var(--surface); color: var(--text); }
 .cta p { max-width: 680px; margin: 0; color: var(--muted); font-size: var(--fs-text); }
 .cta-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; margin-top: 8px; }
-.contact-email { display: grid; gap: 2px; min-width: 190px; }
-.contact-email span { color: var(--muted); font-size: var(--fs-small); font-weight: 600; }
-.contact-email a { width: fit-content; color: var(--accent); font-size: 20px; line-height: 1.25; font-weight: 500; text-decoration: none; }
+.cta .contact-email { color: var(--muted); font-size: var(--fs-text); }
+.contact-email a { color: var(--accent); font-weight: 500; text-decoration: none; }
 .contact-email a:hover { text-decoration: underline; }
 .button { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 10px 16px; border: 0; border-radius: 8px; font-weight: 700; text-decoration: none; cursor: pointer; }
 .button.primary { background: var(--accent); color: #ffffff; }
