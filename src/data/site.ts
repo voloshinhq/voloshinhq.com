@@ -2,12 +2,15 @@ export type Lang = 'ru' | 'en';
 
 export const defaultLang: Lang = 'en';
 export const languages: Lang[] = ['en', 'ru'];
+export const emailAddress = 'voloshinhq@gmail.com';
+export const emailHref = `mailto:${emailAddress}`;
+export const emailComposeHref = `https://mail.google.com/mail/?view=cm&fs=1&to=${emailAddress}`;
 
 export const socialLinks = (lang: Lang) => [
   { key: 'github', label: 'GitHub', href: 'https://github.com/voloshinhq' },
   { key: 'x', label: 'X', href: 'https://x.com/voloshinhq' },
   { key: 'telegram', label: 'Telegram', href: lang === 'ru' ? 'https://t.me/voloshinhq_ru' : 'https://t.me/voloshinhq' },
-  { key: 'email', label: 'Email', href: 'mailto:voloshinhq@gmail.com' }
+  { key: 'email', label: 'Email', href: emailHref }
 ];
 
 export const ctaTelegramHref = 'https://t.me/voloshin_hq';
