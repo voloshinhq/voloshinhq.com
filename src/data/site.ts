@@ -4,7 +4,6 @@ export const defaultLang: Lang = 'en';
 export const languages: Lang[] = ['en', 'ru'];
 export const emailAddress = 'voloshinhq@gmail.com';
 export const emailHref = `mailto:${emailAddress}`;
-export const emailComposeHref = `https://mail.google.com/mail/?view=cm&fs=1&to=${emailAddress}`;
 
 export const socialLinks = (lang: Lang) => [
   { key: 'github', label: 'GitHub', href: 'https://github.com/voloshinhq' },
@@ -86,7 +85,7 @@ export const ui = {
       title: 'Давайте поговорим',
       text: 'Если у вас есть идея, проект или сложный инженерный вопрос, напишите в Telegram. Если удобнее, можно написать на email или забронировать короткий созвон.',
       primary: 'Написать в Telegram',
-      secondary: 'Email',
+      emailLabel: 'Электронная почта',
       tertiary: 'Забронировать встречу'
     },
     blog: {
@@ -169,7 +168,7 @@ export const ui = {
       title: 'Let\'s Talk',
       text: 'If you have an idea, a project, or a hard engineering question, message me on Telegram. If easier, you can email me or book a short call.',
       primary: 'Message on Telegram',
-      secondary: 'Email',
+      emailLabel: 'Email',
       tertiary: 'Book a meeting'
     },
     blog: {
