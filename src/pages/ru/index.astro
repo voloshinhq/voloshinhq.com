@@ -97,15 +97,6 @@ const posts = publishedPosts(await getCollection('blog'), lang).slice(0, 3);
       <p>{copy.cta.text}</p>
       <div class="cta-actions">
         <a class="button primary" href={ctaTelegramHref} target="_blank" rel="noopener">{copy.cta.primary}</a>
-        <button
-          class="button ghost"
-          type="button"
-          data-cal-link="voloshinhq/30min"
-          data-cal-namespace="30min"
-          data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'
-        >
-          {copy.cta.tertiary}
-        </button>
       </div>
       <p class="contact-email">{copy.cta.emailLabel}: <a href={emailHref}>{emailAddress}</a></p>
     </div>

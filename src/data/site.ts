@@ -82,10 +82,9 @@ export const ui = {
     },
     cta: {
       title: 'Давайте поговорим',
-      text: 'Если у вас есть идея, проект или сложный инженерный вопрос, напишите в Telegram. Если удобнее, можно написать на email или забронировать короткий созвон.',
+      text: 'Если у вас есть идея, проект или сложный инженерный вопрос, напишите в Telegram. Если удобнее, можно написать на email.',
       primary: 'Написать в Telegram',
-      emailLabel: 'Электронная почта',
-      tertiary: 'Забронировать встречу'
+      emailLabel: 'Электронная почта'
     },
     blog: {
       title: 'Блог',
@@ -165,10 +164,9 @@ export const ui = {
     },
     cta: {
       title: 'Let\'s Talk',
-      text: 'If you have an idea, a project, or a hard engineering question, message me on Telegram. If easier, you can email me or book a short call.',
+      text: 'If you have an idea, a project, or a hard engineering question, message me on Telegram. If easier, you can email me.',
       primary: 'Message on Telegram',
-      emailLabel: 'Email',
-      tertiary: 'Book a meeting'
+      emailLabel: 'Email'
     },
     blog: {
       title: 'Blog',
